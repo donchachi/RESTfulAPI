@@ -6,14 +6,14 @@ var Schema = mongoose.Schema;
 var LampSchema = new Schema({
   name: {
     type: String,
-    required: 'Kindly enter the name of the lamp'
+    required: 'Ingresa el nombre para la Lampara'
   },
   status: {
     type: [{
       type: String,
-      enum: ['pending', 'ongoing', 'completed']
+      enum: ['OFF', 'ON']
     }],
-    default: ['pending']
+    default: ['OFF']
   }
 });
 

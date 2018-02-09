@@ -4,7 +4,7 @@ var mongoose = require('mongoose'),
 
 
 exports.list_all_lamps = function(req, res) {
-  Lamp.find({}, function(err, task) {
+  Lamp.find({}, function(err, lamp) {
     if (err)
       res.send(err);
     res.json(lamp);

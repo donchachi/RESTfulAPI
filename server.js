@@ -1,13 +1,13 @@
 var express = require('express'),
   app = express(),
-  port = process.env.PORT || 8081,
+  port = process.env.PORT || 3000,
   mongoose = require('mongoose'),
   Lamp = require('./api/models/lampModel'), //created model loading here
   bodyParser = require('body-parser');
 
 // mongoose instance connection url connection
 mongoose.Promise = global.Promise;
-mongoose.connect('mongodb://localhost/Tododb');
+mongoose.connect('mongodb://localhost/Lampdb');
 
 
 app.use(bodyParser.urlencoded({ extended: true }));
