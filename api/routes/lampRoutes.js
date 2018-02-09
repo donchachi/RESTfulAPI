@@ -10,7 +10,7 @@ module.exports = function(app) {
     .post(lamp.create_a_lamp);
 
 
-  app.route('/lamps/:lampId')
+  app.route('/lamps/:lampName')
     .get(lamp.read_a_lamp)
     .put(lamp.update_a_lamp)
     .delete(lamp.delete_a_lamp);

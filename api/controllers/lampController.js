@@ -23,7 +23,7 @@ exports.create_a_lamp = function(req, res) {
 
 
 exports.read_a_lamp = function(req, res) {
-  Lamp.findById(req.params.lampId, function(err, lamp) {
+  Lamp.find({ name: req.params.lampName }, function(err, lamp) {
     if (err)
       res.send(err);
     res.json(lamp);
@@ -32,7 +32,7 @@ exports.read_a_lamp = function(req, res) {
 
 
 exports.update_a_lamp = function(req, res) {
-  Lamp.findOneAndUpdate({_id: req.params.lampId}, req.body, {new: true}, function(err, lamp) {
+  Lamp.findOneAndUpdate({ name: req.params.lampName}, req.body, {new: true}, function(err, lamp) {
     if (err)
       res.send(err);
     res.json(lamp);
@@ -42,7 +42,7 @@ exports.update_a_lamp = function(req, res) {
 
 exports.delete_a_lamp = function(req, res) {
   Lamp.remove({
-    _id: req.params.lampId
+    name: req.params.lampName
   }, function(err, lamp) {
     if (err)
       res.send(err);
